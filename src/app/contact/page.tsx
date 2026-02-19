@@ -170,8 +170,6 @@ export default function ContactPage() {
                   </MaskReveal>
                 )}
               </div>
-
-              {/* Right – Info */}
               <div className="relative">
                 <Reveal direction="right">
                   <div className="lg:sticky lg:top-40 space-y-16">
