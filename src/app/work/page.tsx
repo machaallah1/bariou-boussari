@@ -45,7 +45,6 @@ function ProjectItem({ project, index }: { project: typeof projects[0]; index: n
           <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/60 via-[#080808]/10 to-transparent" />
           <div className="absolute inset-0 bg-[#C4A97D]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-          {/* Number */}
           <div className="absolute top-5 left-5 flex items-center gap-3">
             <span className="text-[10px] text-white/25 tracking-[0.3em] font-mono">
               {String(index + 1).padStart(2, "0")}
