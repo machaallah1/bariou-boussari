@@ -19,9 +19,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Bariou Boussari — UX/UI Designer",
+  title: "Bariou Boussari — Designer UX/UI",
   description:
-    "UX/UI Designer crafting clear, usable and thoughtful digital experiences. Portfolio showcasing projects, process and product thinking.",
+    "Designer UX/UI Product basé à Lomé. Conception d'expériences digitales structurées, centrées utilisateur. Portfolio de projets, méthodologie et réflexion produit.",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${inter.variable} ${playfair.variable} antialiased font-sans`}
       >

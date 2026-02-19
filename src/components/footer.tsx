@@ -43,7 +43,7 @@ export function Footer() {
               {[
                 { label: "Accueil", href: "/" },
                 { label: "Projets", href: "/work" },
-                { label: "Processus", href: "/process" },
+                  { label: "Méthodologie", href: "/process" },
                 { label: "À propos", href: "/about" },
                 { label: "Contact", href: "/contact" },
               ].map((item) => (

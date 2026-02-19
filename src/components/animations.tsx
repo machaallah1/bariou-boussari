@@ -28,7 +28,7 @@ export function SplitText({
   return (
     <span ref={ref} className={`inline ${className}`} aria-label={children}>
       {items.map((item, i) => (
-        <span key={i} className="inline-block overflow-hidden align-bottom">
+          <span key={i} className="inline-block overflow-hidden pb-[0.2em] mb-[-0.2em] align-top">
           <motion.span
             className="inline-block"
             initial={{ y: "120%", rotateX: -40, opacity: 0 }}

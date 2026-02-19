@@ -44,37 +44,37 @@ const skills = [
 ];
 
 const experience = [
-  {
-    role: "UX Designer",
-    company: "ORTA Service",
-    period: "Juin — Juil 2022",
-    desc: "Expérience professionnelle chez ORTA Service en tant que UX Designer. Contribution à la conception d'interfaces utilisateur et à l'amélioration de l'expérience utilisateur des produits digitaux de l'entreprise.",
-  },
-  {
-    role: "UX/UI Designer",
-    company: "Upsilon Consulting",
-    period: "Juil 2022 — Janv 2023",
-    desc: "Expérience professionnelle chez Upsilon Consulting en tant que UX/UI Designer. Conception et optimisation d'interfaces pour des projets clients variés, en appliquant une méthodologie centrée utilisateur.",
-  },
-  {
-    role: "UX/UI Designer",
-    company: "CADRECO",
-    period: "Juin — Sept 2023",
-    desc: "Expérience professionnelle chez CADRECO en tant que UX/UI Designer. Réalisation de maquettes, prototypes et parcours utilisateurs pour améliorer les produits numériques de l'entreprise.",
-  },
-  {
-    role: "UX/UI Designer",
-    company: "SLI Afrika",
-    period: "Déc 2023 — Sept 2024",
-    desc: "Expérience professionnelle chez SLI Afrika en tant que UX/UI Designer. Conception d'expériences digitales adaptées au marché africain, avec un focus sur l'accessibilité et la simplicité d'utilisation.",
-  },
-  {
-    role: "UX/UI Designer",
-    company: "Maono — Togo",
-    period: "Oct 2024 — Nov 2025",
-    desc: "Expérience professionnelle à Maono au Togo en tant que UX/UI Designer. Direction du design d'interfaces utilisateur pour des solutions digitales, en collaborant étroitement avec les équipes produit et développement.",
-  },
-];
+    {
+      role: "UX Designer",
+      company: "ORTA Service",
+      period: "Juin — Juil 2022",
+      desc: "Première expérience en contexte professionnel. Conception d'interfaces utilisateur sur des produits internes, avec une attention portée à la lisibilité des flux et à la cohérence des composants.",
+    },
+    {
+      role: "UX/UI Designer",
+      company: "Upsilon Consulting",
+      period: "Juil 2022 — Janv 2023",
+      desc: "Conception et optimisation d'interfaces pour des projets clients variés. Structuration des parcours utilisateurs, production de maquettes haute-fidélité, et collaboration directe avec les équipes de développement.",
+    },
+    {
+      role: "UX/UI Designer",
+      company: "CADRECO",
+      period: "Juin — Sept 2023",
+      desc: "Réalisation des livrables UX/UI sur plusieurs projets numériques : wireframes, prototypes interactifs, parcours critiques. Travail en cycles courts avec validation régulière des hypothèses de design.",
+    },
+    {
+      role: "UX/UI Designer",
+      company: "SLI Afrika",
+      period: "Déc 2023 — Sept 2024",
+      desc: "Conception d'expériences digitales adaptées aux contraintes du marché africain : accessibilité, connectivité variable, diversité des profils utilisateurs. Focus sur la simplicité d'usage et la robustesse des parcours.",
+    },
+    {
+      role: "UX/UI Designer",
+      company: "Maono — Togo",
+      period: "Oct 2024 — Nov 2025",
+      desc: "Direction design sur des solutions digitales complexes au sein d'une agence d'innovation. Pilotage de la conception de bout en bout — de l'architecture UX à la livraison UI — en collaboration étroite avec les équipes produit et technique.",
+    },
+  ];
 
 export default function AboutPage() {
   return (
@@ -100,13 +100,13 @@ export default function AboutPage() {
             </MaskReveal>
             <div className="mt-4 mb-16 md:mb-24">
               <h1 className="font-serif text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] text-foreground max-w-4xl">
-                <SplitText type="words" stagger={0.04}>Un designer focalisé sur la</SplitText>{" "}
+                <SplitText type="words" stagger={0.04}>Un designer qui traduit la</SplitText>{" "}
                 <span className="italic text-[#C4A97D]">
-                  <SplitText type="words" delay={0.5} stagger={0.04}>clarté</SplitText>
+                  <SplitText type="words" delay={0.5} stagger={0.04}>complexité</SplitText>
                 </span>
-                <SplitText type="words" delay={0.6} stagger={0.04}>, la structure et le</SplitText>{" "}
+                <SplitText type="words" delay={0.6} stagger={0.04}> en expériences</SplitText>{" "}
                 <span className="italic text-[#C4A97D]">
-                  <SplitText type="words" delay={0.8} stagger={0.04}>sens</SplitText>
+                  <SplitText type="words" delay={0.8} stagger={0.04}>lisibles</SplitText>
                 </span>
                 <SplitText type="words" delay={0.9} stagger={0.04}>.</SplitText>
               </h1>
@@ -138,31 +138,30 @@ export default function AboutPage() {
 
               {/* Bio */}
               <div>
-                <MaskReveal delay={0.2}>
-                  <p className="text-xl md:text-2xl text-foreground leading-[1.5] mb-10 font-serif">
-                    Je suis Bariou Boussari, Designer UX/UI créant des
-                    expériences digitales claires, structurées et significatives.
-                  </p>
-                </MaskReveal>
+                  <MaskReveal delay={0.2}>
+                    <p className="text-xl md:text-2xl text-foreground leading-[1.5] mb-10 font-serif">
+                      Je suis Bariou Boussari, Designer UX/UI Product basé à Lomé.
+                      Je conçois des expériences digitales qui résolvent de vrais problèmes.
+                    </p>
+                  </MaskReveal>
 
-                <MaskReveal delay={0.3}>
-                  <p className="text-[#6B635A] leading-[1.9] mb-6">
-                    Je crois que le bon design est invisible. Il n&apos;attire pas
-                    l&apos;attention sur lui-même — il fait en sorte que tout autour
-                    fonctionne mieux. Mon approche combine la pensée analytique avec
-                    une forte sensibilité visuelle, garantissant que chaque projet est
-                    à la fois bien raisonné et magnifiquement exécuté.
-                  </p>
-                </MaskReveal>
+                  <MaskReveal delay={0.3}>
+                    <p className="text-[#6B635A] leading-[1.9] mb-6">
+                        Mon approche part toujours du problème — pas de la forme. Avant de
+                        concevoir, je cartographie les parcours, identifie les frictions,
+                        aligne les intentions. L&apos;interface est la conclusion d&apos;un
+                        raisonnement, pas son point de départ.
+                    </p>
+                  </MaskReveal>
 
-                <MaskReveal delay={0.4}>
-                  <p className="text-[#6B635A] leading-[1.9] mb-10">
-                    Que je travaille sur un tableau de bord fintech, une plateforme
-                    santé ou une refonte média, j&apos;apporte le même engagement envers
-                    la clarté, la cohérence et le respect de l&apos;utilisateur. Je ne
-                    m&apos;intéresse pas à la décoration — je m&apos;intéresse aux solutions.
-                  </p>
-                </MaskReveal>
+                  <MaskReveal delay={0.4}>
+                    <p className="text-[#6B635A] leading-[1.9] mb-10">
+                      Que ce soit un tableau de bord médical, une plateforme de gestion
+                      d&apos;événements ou un écosystème d&apos;agence, j&apos;apporte la même
+                      rigueur : une architecture solide, une hiérarchie maîtrisée et
+                      un soin constant pour la cohérence entre discours et perception.
+                    </p>
+                  </MaskReveal>
 
                 <MaskReveal delay={0.5}>
                   <div className="flex items-center gap-6 pt-6 border-t border-[rgba(196,169,125,0.05)]">
@@ -184,13 +183,13 @@ export default function AboutPage() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative">
             <div className="text-center mb-12">
               <MaskReveal>
-                <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
-                  Ce que je crée
-                </span>
+                  <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
+                    Du wireframe au pixel
+                  </span>
               </MaskReveal>
               <div className="mt-3">
                 <h2 className="font-serif text-3xl md:text-5xl text-foreground">
-                  <SplitText type="words" stagger={0.05}>Des produits digitaux réfléchis</SplitText>
+                  <SplitText type="words" stagger={0.05}>Structurés, fonctionnels, maintenables</SplitText>
                 </h2>
               </div>
             </div>
@@ -275,9 +274,9 @@ export default function AboutPage() {
                       <h3 className="text-foreground font-serif text-lg md:text-xl group-hover:text-[#C4A97D] transition-colors duration-500">
                         Consulter mon CV
                       </h3>
-                      <p className="text-[#6B635A] text-sm mt-1">
-                        Parcours complet, compétences et expériences — format A4
-                      </p>
+                        <p className="text-[#6B635A] text-sm mt-1">
+                          Parcours détaillé, compétences et expériences — format A4
+                        </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-[#C4A97D]/60 text-xs tracking-[0.2em] uppercase group-hover:text-[#C4A97D] transition-colors duration-500">
@@ -349,15 +348,20 @@ export default function AboutPage() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pulse-glow rounded-full" />
 
               <Reveal>
-                <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium block mb-8">
-                  Philosophie
-                </span>
-                <blockquote className="font-serif text-2xl md:text-4xl text-foreground leading-[1.3] italic relative z-10">
-                  &laquo; La simplicité n&apos;est pas l&apos;absence de complexité —
-                  c&apos;est le résultat de sa maîtrise. Le bon design rend le
-                  complexe naturel. &raquo;
-                </blockquote>
-              </Reveal>
+                  <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium block mb-8">
+                    Philosophie
+                  </span>
+                  <div className="space-y-12 relative z-10">
+                    <blockquote className="font-serif text-2xl md:text-4xl text-foreground leading-[1.3] italic">
+                      &laquo; Le design ne règle pas les problèmes de surface.
+                      Il révèle les problèmes de structure — et les résout depuis la racine. &raquo;
+                    </blockquote>
+                    <div className="w-12 h-[1px] bg-[#C4A97D]/20 mx-auto" />
+                    <blockquote className="font-serif text-2xl md:text-4xl text-foreground leading-[1.3] italic">
+                      &laquo; La simplicité n&apos;est pas l&apos;absence de complexité — c&apos;est le résultat de sa maîtrise. Le bon design rend le complexe naturel. &raquo;
+                    </blockquote>
+                  </div>
+                </Reveal>
             </div>
           </div>
         </section>

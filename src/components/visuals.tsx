@@ -631,12 +631,12 @@ export function ProcessFlowDiagram({ className = "" }: { className?: string }) {
         <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
           Vue d&apos;ensemble
         </span>
-        <h3 className="font-serif text-2xl md:text-3xl text-foreground mt-3">
-          Du probleme a la solution
-        </h3>
-        <p className="text-[#6B635A] text-sm mt-2 max-w-md mx-auto">
-          Un parcours iteratif ou chaque etape alimente la suivante
-        </p>
+          <h3 className="font-serif text-2xl md:text-3xl text-foreground mt-3">
+            Du problème à la solution
+          </h3>
+          <p className="text-[#6B635A] text-sm mt-2 max-w-md mx-auto">
+            Un parcours itératif où chaque étape alimente la suivante
+          </p>
       </motion.div>
 
       <svg viewBox="0 0 920 320" className="w-full h-auto" preserveAspectRatio="xMidYMid meet">

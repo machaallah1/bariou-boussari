@@ -23,31 +23,31 @@ const steps = [
   {
     num: "01",
     title: "Comprendre le problème",
-    desc: "Chaque projet commence par la compréhension. Je travaille à identifier le vrai défi derrière le brief à travers des conversations avec les parties prenantes, l'analyse concurrentielle et la recherche contextuelle. L'objectif est de séparer les hypothèses des preuves et d'aligner tout le monde sur ce qui doit être résolu.",
+    desc: "Chaque projet commence par séparer ce qui est demandé de ce qui doit être résolu. Des entretiens avec les parties prenantes, une analyse du contexte et une revue concurrentielle permettent d'établir une définition claire du problème — avant qu'une seule ligne ne soit tracée.",
     methods: ["Entretiens parties prenantes", "Analyse concurrentielle", "Cadrage du problème"],
   },
   {
     num: "02",
     title: "Recherche UX & structure",
-    desc: "La recherche guide chaque décision. Je construis des personas, cartographie les parcours utilisateurs et identifie les points de friction. Cette phase crée la fondation stratégique qui garantit que chaque choix de design a une raison d'être.",
+    desc: "La recherche détermine les priorités de design. Personas, cartographie des parcours, identification des points de rupture. Cette phase construit la base de décision — elle impose les contraintes qui rendent les choix ultérieurs défendables.",
     methods: ["Entretiens utilisateurs", "Personas", "Cartographie de parcours", "Cartes d'empathie"],
   },
   {
     num: "03",
     title: "Flux & architecture",
-    desc: "Avant tout travail visuel, je structure l'expérience. L'architecture de l'information, les flux utilisateurs et les patterns de navigation sont définis pour garantir que le produit est logique, intuitif et évolutif.",
+    desc: "L'architecture de l'information précède toujours le design visuel. Les flux utilisateurs, la logique de navigation et les patterns d'interaction sont définis ici — de sorte que le produit soit structurellement cohérent avant d'être esthétiquement résolu.",
     methods: ["Architecture de l'information", "Flux utilisateurs", "Plans de site", "Wireframes"],
   },
   {
     num: "04",
     title: "Interface & système",
-    desc: "La couche visuelle donne vie à la structure. Je conçois avec cohérence, en construisant des design systems qui sont beaux, fonctionnels et maintenables. Chaque composant a un objectif.",
+    desc: "La couche visuelle traduit la structure en expérience. Le design system assure la cohérence à l'échelle — chaque composant est défini pour être fonctionnel, maintenable et extensible. L'esthétique sert l'usage, pas l'inverse.",
     methods: ["Design visuel", "Design systems", "Bibliothèques de composants", "Prototypage"],
   },
   {
     num: "05",
     title: "Livraison & itération",
-    desc: "Le design ne s'arrête pas au handoff. Je collabore étroitement avec les développeurs, assure la fidélité du design et itère en fonction des retours réels et des tests. L'objectif est un produit livré qui fonctionne.",
+    desc: "Le handoff n'est pas la fin du projet. La collaboration avec les développeurs garantit la fidélité du design en production. Les retours réels et les tests d'usage alimentent les itérations — jusqu'à ce que le produit fonctionne comme prévu.",
     methods: ["Handoff développeur", "Tests d'utilisabilité", "Itération", "Revue QA"],
   },
 ];
@@ -67,20 +67,19 @@ export default function ProcessPage() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-10">
             {/* Header */}
             <div className="mb-24 md:mb-36 relative">
-              <MaskReveal>
-                <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
-                  Méthodologie
-                </span>
-              </MaskReveal>
-              <div className="mt-4 mb-8">
-                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9]">
-                  <SplitText type="words" stagger={0.06}>Processus</SplitText>
-                </h1>
-              </div>
+                <MaskReveal>
+                  <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
+                    Processus
+                  </span>
+                </MaskReveal>
+                <div className="mt-4 mb-8">
+                  <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground leading-[1] pb-[0.1em]">
+                      <SplitText type="words" stagger={0.06}>Méthodologie</SplitText>
+                  </h1>
+                </div>
               <MaskReveal delay={0.3}>
                 <p className="text-[#6B635A] max-w-xl text-lg leading-relaxed">
-                  Une approche claire et structurée, de la compréhension à la
-                  livraison. Chaque étape a un objectif.
+                    Cinq phases, chacune avec une intention précise. L'approche s'adapte au projet — la logique, jamais.
                 </p>
               </MaskReveal>
 
@@ -150,9 +149,9 @@ export default function ProcessPage() {
                 <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium block mb-8">
                   Philosophie
                 </span>
-                <blockquote className="font-serif text-2xl md:text-4xl text-foreground leading-[1.3] italic max-w-3xl mx-auto relative z-10">
-                  &laquo; Un bon processus est invisible. Il supprime la friction, pas la créativité. &raquo;
-                </blockquote>
+                  <blockquote className="font-serif text-2xl md:text-4xl text-foreground leading-[1.3] italic max-w-3xl mx-auto relative z-10">
+                      &laquo; Une méthodologie solide ne contraint pas la créativité — elle la dirige là où elle compte vraiment. &raquo;
+                  </blockquote>
               </Reveal>
             </div>
           </div>

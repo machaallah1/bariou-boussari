@@ -30,18 +30,18 @@ import {
 } from "@/components/visuals";
 
 const processSteps = [
-  { num: "01", title: "Compréhension", desc: "Définir le vrai défi à travers la recherche et l'alignement des parties prenantes." },
-  { num: "02", title: "Recherche", desc: "Construire des personas, cartographier les parcours et établir les fondations." },
-  { num: "03", title: "Architecture", desc: "Concevoir les flux utilisateurs, les patterns de navigation et la structure du contenu." },
-  { num: "04", title: "Interface", desc: "Créer la couche visuelle avec un design system cohérent." },
-  { num: "05", title: "Livraison", desc: "Livrer, tester les hypothèses et affiner grâce aux retours." },
+  { num: "01", title: "Compréhension", desc: "Identifier le problème réel derrière le brief. Aligner les parties prenantes sur ce qui doit être résolu — pas ce qui est demandé." },
+  { num: "02", title: "Recherche", desc: "Construire une base de décision solide : personas, parcours, points de friction. La recherche définit les priorités avant que le design ne commence." },
+  { num: "03", title: "Architecture", desc: "Concevoir la structure de l'expérience avant tout. Flux utilisateurs, hiérarchie de l'information, logique de navigation — tout se décide ici." },
+  { num: "04", title: "Interface", desc: "Construire la couche visuelle avec rigueur : design system, composants, cohérence. Chaque décision a une raison fonctionnelle." },
+  { num: "05", title: "Livraison", desc: "Collaborer avec les développeurs, valider la fidélité, itérer sur les retours réels. Le travail ne s'arrête pas au handoff." },
 ];
 
 const strengths = [
-  { num: "01", title: "UX axée sur la clarté", desc: "Chaque décision de design sert la compréhension. La complexité est simplifiée, pas cachée." },
-  { num: "02", title: "Pensée structurée", desc: "De la recherche à la livraison, les projets suivent une méthodologie claire et reproductible." },
-  { num: "03", title: "Précision visuelle", desc: "Typographie, espacement et hiérarchie sont travaillés avec soin pour un résultat soigné." },
-  { num: "04", title: "Collaboration d'équipe", desc: "Collaboration fluide avec les équipes produit, développement et métier." },
+  { num: "01", title: "Pensée produit", desc: "Le design part du problème métier, pas de la forme. Chaque interface traduit une logique de valeur et une intention produit explicite." },
+  { num: "02", title: "Rigueur structurelle", desc: "L'architecture de l'information et les flux sont définis avant le pixel. La structure détermine l'expérience — pas l'inverse." },
+  { num: "03", title: "Maîtrise visuelle", desc: "Typographie, densité, rythme d'espacement. La précision visuelle n'est pas esthétique — elle guide la lecture et réduit la charge cognitive." },
+  { num: "04", title: "Collaboration terrain", desc: "Travail direct avec les équipes produit, tech et métier. Le design est un levier d'alignement, pas une prestation isolée." },
 ];
 
 function HeroSection() {
@@ -112,29 +112,29 @@ function HeroSection() {
         </div>
 
         {/* Main title */}
-        <h1 className="font-serif text-[clamp(3rem,8vw,7.5rem)] leading-[0.92] tracking-[-0.03em] text-foreground">
-            <SplitText delay={0.4} stagger={0.025} type="words">
-              Concevoir des
-            </SplitText>{" "}
-            <span className="italic text-[#C4A97D]">
-              <SplitText delay={0.6} stagger={0.025} type="words">
-                expériences
+          <h1 className="font-serif text-[clamp(3rem,8vw,7.5rem)] leading-[0.92] tracking-[-0.03em] text-foreground">
+              <SplitText delay={0.4} stagger={0.025} type="words">
+                Designer de
+              </SplitText>{" "}
+              <span className="italic text-[#C4A97D]">
+                <SplitText delay={0.6} stagger={0.025} type="words">
+                  produit
+                </SplitText>
+              </span>
+              <br className="hidden md:block" />{" "}
+              <SplitText delay={0.7} stagger={0.025} type="words">
+                qui pense
+              </SplitText>{" "}
+              <span className="italic text-[#C4A97D]">
+                <SplitText delay={0.9} stagger={0.025} type="words">
+                  structure
+                </SplitText>
+              </span>
+              <br className="hidden md:block" />{" "}
+              <SplitText delay={1.0} stagger={0.025} type="words">
+                  avant de concevoir
               </SplitText>
-            </span>
-            <br className="hidden md:block" />{" "}
-            <SplitText delay={0.7} stagger={0.025} type="words">
-              digitales
-            </SplitText>{" "}
-            <span className="italic text-[#C4A97D]">
-              <SplitText delay={0.9} stagger={0.025} type="words">
-                claires
-              </SplitText>
-            </span>
-            <br className="hidden md:block" />{" "}
-            <SplitText delay={1.0} stagger={0.025} type="words">
-              et réfléchies
-            </SplitText>
-          </h1>
+            </h1>
 
         {/* Subtitle & CTAs */}
         <motion.div
@@ -143,9 +143,9 @@ function HeroSection() {
         >
           <MaskReveal delay={1.2}>
               <p className="text-lg md:text-xl text-[#6B635A] max-w-md leading-relaxed">
-                Projets, processus et réflexion produit.
+                Projets, raisonnement et réflexion produit.
                 <br />
-                <span className="text-[#8A817A]">Basé à Lomé.</span>
+                  <span className="text-[#8A817A]">Basé à Lomé — disponible à distance ou en présentiel partout en Afrique.</span>
               </p>
           </MaskReveal>
 
@@ -189,7 +189,7 @@ function HeroSection() {
 }
 
 function MarqueeStrip() {
-  const skills = ["Design UX", "Design UI", "Réflexion produit", "Design Systems", "Recherche utilisateur", "Prototypage", "Architecture de l'information", "Design visuel"];
+  const skills = ["Design UX", "Design UI", "Pensée produit", "Design Systems", "Recherche utilisateur", "Prototypage", "Architecture de l'information", "Direction visuelle"];
 
   return (
     <div className="py-8 border-t border-b border-[rgba(196,169,125,0.05)]">
@@ -237,7 +237,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
       transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: (index % 2) * 0.15 }}
     >
-      <Link href={`/work/${project.slug}`} className="group block project-card" data-cursor="View">
+      <Link href={`/work/${project.slug}`} className="group block project-card" data-cursor="Voir">
         {/* Image */}
         <div className="relative overflow-hidden bg-[#111110] aspect-[4/3] rounded-sm">
           <Image
@@ -322,8 +322,8 @@ function SelectedWork() {
                 href="/work"
                 className="hidden sm:inline-flex items-center gap-3 text-sm text-[#6B635A] hover:text-[#C4A97D] transition-colors duration-500 tracking-[0.12em] uppercase link-underline"
               >
-                  All projects
-                  <ArrowUpRight size={14} />
+                  Tous les projets
+                    <ArrowUpRight size={14} />
                 </Link>
               </Magnetic>
             </Reveal>
@@ -362,7 +362,7 @@ function DesignShowcase() {
         <div className="text-center mb-12 md:mb-16">
           <MaskReveal>
             <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
-                Conçu avec soin
+                Du concept au livrable
               </span>
             </MaskReveal>
             <div className="mt-3">
@@ -417,12 +417,12 @@ function ProcessSection() {
             </MaskReveal>
             <div className="mt-4 mb-6">
               <h2 className="font-serif text-4xl md:text-6xl text-foreground leading-[0.95]">
-                <SplitText type="words" stagger={0.05}>Approche & processus</SplitText>
+                <SplitText type="words" stagger={0.05}>Approche & méthodologie</SplitText>
               </h2>
             </div>
             <Reveal delay={0.3}>
               <p className="text-[#6B635A] leading-relaxed max-w-md">
-                Une méthodologie structurée, de la compréhension du problème à la livraison de solutions affinées.
+                De la définition du problème à la livraison — chaque étape a une intention précise et un livrable attendu.
               </p>
             </Reveal>
 
@@ -470,13 +470,13 @@ function StrengthsSection() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 pt-32 md:pt-48">
         <div className="text-center mb-20 md:mb-28">
           <MaskReveal>
-            <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
-                Why me
-              </span>
+              <span className="text-[#C4A97D] text-xs tracking-[0.35em] uppercase font-medium">
+                  Atouts
+                </span>
             </MaskReveal>
             <div className="mt-4">
               <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-foreground leading-[0.95]">
-                <SplitText type="words" stagger={0.05}>Pourquoi travailler avec moi</SplitText>
+                <SplitText type="words" stagger={0.05}>Ce que j'apporte au projet</SplitText>
             </h2>
           </div>
         </div>
@@ -536,15 +536,15 @@ function CTASection() {
             Me contacter
           </span>
         </MaskReveal>
-        <div className="mt-6">
-          <h2 className="font-serif text-[clamp(2.2rem,6vw,5.5rem)] text-foreground leading-[0.95] max-w-4xl mx-auto">
-            <SplitText type="words" stagger={0.04}>Vous cherchez un designer qui</SplitText>{" "}
-            <span className="italic text-[#C4A97D]">
-              <SplitText type="words" delay={0.5} stagger={0.04}>réfléchit</SplitText>
-            </span>{" "}
-            <SplitText type="words" delay={0.6} stagger={0.04}>avant de designer ?</SplitText>
-          </h2>
-        </div>
+          <div className="mt-6">
+            <h2 className="font-serif text-[clamp(2.2rem,6vw,5.5rem)] text-foreground leading-[0.95] max-w-4xl mx-auto">
+              <SplitText type="words" stagger={0.04}>Vous cherchez un designer qui</SplitText>{" "}
+              <span className="italic text-[#C4A97D]">
+                <SplitText type="words" delay={0.5} stagger={0.04}>comprend le produit</SplitText>
+              </span>{" "}
+              <SplitText type="words" delay={0.6} stagger={0.04}>avant de concevoir l'interface ?</SplitText>
+            </h2>
+          </div>
 
         <MaskReveal delay={0.8}>
           <div className="mt-14">

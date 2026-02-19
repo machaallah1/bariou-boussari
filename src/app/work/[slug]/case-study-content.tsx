@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import {
   SplitText,
   MaskReveal,
@@ -136,9 +136,9 @@ function BrowserMockup({ src, alt }: { src: string; alt: string }) {
             </div>
             <div className="flex-1 flex justify-center">
               <div className="bg-[#0E0D0C] rounded-md px-16 py-1.5">
-                <span className="text-[10px] text-[#6B635A] tracking-wider">
-                  design preview
-                </span>
+                  <span className="text-[10px] text-[#6B635A] tracking-wider">
+                    aperçu design
+                  </span>
               </div>
             </div>
           </div>
@@ -168,9 +168,9 @@ function PhoneMockup({ src, alt }: { src: string; alt: string }) {
           <Image src={src} alt={alt} fill className="object-cover object-top" sizes="320px" />
         </div>
       </div>
-      <p className="text-[11px] text-[#6B635A] tracking-[0.15em] uppercase mt-6 text-center">
-        Mobile experience
-      </p>
+        <p className="text-[11px] text-[#6B635A] tracking-[0.15em] uppercase mt-6 text-center">
+          Expérience mobile
+        </p>
     </motion.div>
   );
 }
@@ -281,9 +281,9 @@ function DuoPhones({ leftSrc, rightSrc, alt }: { leftSrc: string; rightSrc: stri
              </div>
           </div>
         </div>
-        <p className="text-[11px] text-[#6B635A] tracking-[0.15em] uppercase mt-12 text-center">
-          Mobile interface design
-        </p>
+          <p className="text-[11px] text-[#6B635A] tracking-[0.15em] uppercase mt-12 text-center">
+            Interfaces mobiles
+          </p>
       </div>
     </motion.div>
   );
@@ -313,7 +313,7 @@ function DeviceDuo({ desktopSrc, mobileSrc, alt }: { desktopSrc: string; mobileS
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="bg-[#0E0D0C] rounded-md px-12 py-1">
-                  <span className="text-[10px] text-[#6B635A] tracking-wider">desktop</span>
+                    <span className="text-[10px] text-[#6B635A] tracking-wider">bureau</span>
                 </div>
               </div>
             </div>
@@ -517,6 +517,13 @@ export function CaseStudyContent({
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
+  const [showSticky, setShowSticky] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowSticky(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const g = project.gallery;
   const sections = project.sections;
 
@@ -581,6 +588,34 @@ export function CaseStudyContent({
     <div className="min-h-screen">
       <ScrollProgress />
 
+      {/* ═══ STICKY CTA ═══ */}
+      {project.url && (
+        <AnimatePresence>
+          {showSticky && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 16 }}
+              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="fixed bottom-8 right-8 z-50"
+            >
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-[#080808]/90 backdrop-blur-md border border-[#C4A97D]/30 text-[11px] text-[#C4A97D]/80 tracking-[0.2em] uppercase hover:border-[#C4A97D]/70 hover:text-[#C4A97D] transition-all duration-500 group shadow-xl shadow-black/40"
+              >
+                {project.urlLabel ?? "Voir le projet"}
+                <ArrowUpRight
+                  size={12}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500"
+                />
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+
       {/* ═══ HERO ═══ */}
       <section
         ref={heroRef}
@@ -634,13 +669,30 @@ export function CaseStudyContent({
             </p>
           </MaskReveal>
 
-          <MaskReveal delay={0.5}>
-            <p className="text-lg md:text-xl text-[#8A817A] max-w-2xl leading-relaxed">
-              {project.description}
-            </p>
-          </MaskReveal>
-        </motion.div>
-      </section>
+            <MaskReveal delay={0.5}>
+              <p className="text-lg md:text-xl text-[#8A817A] max-w-2xl leading-relaxed">
+                {project.description}
+              </p>
+            </MaskReveal>
+
+            {project.url && (
+              <MaskReveal delay={0.65}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 mt-8 px-6 py-3 border border-[#C4A97D]/25 text-[11px] text-[#C4A97D]/70 tracking-[0.2em] uppercase hover:border-[#C4A97D]/60 hover:text-[#C4A97D] transition-all duration-500 group"
+                >
+                  {project.urlLabel ?? "Voir le projet"}
+                  <ArrowUpRight
+                    size={12}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500"
+                  />
+                </a>
+              </MaskReveal>
+            )}
+          </motion.div>
+        </section>
 
       {/* ═══ VISION QUOTE ═══ */}
       <section className="py-20 md:py-32 relative overflow-hidden">
@@ -781,7 +833,7 @@ export function CaseStudyContent({
             <Link
               href={`/work/${next.slug}`}
               className="group inline-flex flex-col items-center gap-8"
-              data-cursor="Next"
+              data-cursor="Suivant"
             >
               <span className="font-serif text-5xl md:text-7xl lg:text-9xl text-foreground group-hover:text-[#C4A97D] transition-colors duration-700 leading-none">
                 <SplitText type="words" stagger={0.06}>

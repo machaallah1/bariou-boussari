@@ -56,21 +56,21 @@ export default function ContactPage() {
                 </MaskReveal>
                 <div className="mt-4 mb-6">
                   <h1 className="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-[0.95] text-foreground">
-                    <SplitText type="words" stagger={0.04}>Construisons quelque chose de</SplitText>{" "}
+                    <SplitText type="words" stagger={0.04}>Un projet qui mérite</SplitText>{" "}
                     <span className="italic text-[#C4A97D]">
-                      <SplitText type="words" delay={0.5} stagger={0.04}>clair</SplitText>
+                      <SplitText type="words" delay={0.5} stagger={0.04}>un vrai</SplitText>
                     </span>{" "}
-                    <SplitText type="words" delay={0.6} stagger={0.04}>et</SplitText>{" "}
+                    <SplitText type="words" delay={0.6} stagger={0.04}>travail de</SplitText>{" "}
                     <span className="italic text-[#C4A97D]">
-                      <SplitText type="words" delay={0.7} stagger={0.04}>significatif</SplitText>
+                      <SplitText type="words" delay={0.7} stagger={0.04}>design</SplitText>
                     </span>
-                    <SplitText type="words" delay={0.8} stagger={0.04}>.</SplitText>
+                    <SplitText type="words" delay={0.8} stagger={0.04}> ?</SplitText>
                   </h1>
                 </div>
 
                 <MaskReveal delay={0.3}>
                   <p className="text-[#6B635A] text-lg leading-relaxed mb-14 md:mb-20 max-w-md">
-                    Vous avez un projet en tête ? J&apos;aimerais en entendre parler.
+                    Partagez le contexte — je reviens avec des questions précises, pas des propositions génériques.
                   </p>
                 </MaskReveal>
 
@@ -85,11 +85,11 @@ export default function ContactPage() {
                       </div>
                       <div className="w-16 h-[1px] bg-[#C4A97D]/40 mb-10" />
                       <h2 className="font-serif text-4xl text-foreground mb-5">
-                        Message envoyé.
-                      </h2>
-                      <p className="text-[#6B635A] leading-relaxed max-w-md">
-                        Merci pour votre message. Je vous répondrai dans les plus brefs délais.
-                      </p>
+                          Message reçu.
+                        </h2>
+                        <p className="text-[#6B635A] leading-relaxed max-w-md">
+                          Je vous répondrai dans les 48h avec une réponse construite — pas un accusé de réception automatique.
+                        </p>
                     </div>
                   </Reveal>
                 ) : (

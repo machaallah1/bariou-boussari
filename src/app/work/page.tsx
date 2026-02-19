@@ -18,10 +18,10 @@ import {
   FloatingElement,
   AbstractBlob,
   DotsPattern,
-  WireframeGrid,
+  ProcessFlowDiagram,
 } from "@/components/visuals";
 
-const filters = ["All", "UX", "UI", "Web", "Product"];
+const filters = ["Tous", "UX", "UI", "Web", "Produit"];
 
 function ProjectItem({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef(null);
@@ -34,7 +34,7 @@ function ProjectItem({ project, index }: { project: typeof projects[0]; index: n
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: index * 0.05 }}
     >
-      <Link href={`/work/${project.slug}`} className="group block project-card" data-cursor="view">
+      <Link href={`/work/${project.slug}`} className="group block project-card" data-cursor="Voir">
         <div className="relative overflow-hidden bg-[#111110] aspect-[4/3]">
           <Image
             src={project.thumbnail}
@@ -54,7 +54,7 @@ function ProjectItem({ project, index }: { project: typeof projects[0]; index: n
 
           {/* View indicator */}
           <div className="absolute bottom-5 right-5 flex items-center gap-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-            <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase">View</span>
+              <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase">Voir</span>
             <div className="w-7 h-7 rounded-full border border-[#C4A97D]/30 flex items-center justify-center group-hover:bg-[#C4A97D]/10 transition-colors duration-300">
               <ArrowUpRight size={11} className="text-[#C4A97D]" />
             </div>
@@ -84,10 +84,10 @@ function ProjectItem({ project, index }: { project: typeof projects[0]; index: n
 }
 
 export default function WorkPage() {
-  const [active, setActive] = useState("All");
+  const [active, setActive] = useState("Tous");
 
   const filtered =
-    active === "All"
+    active === "Tous"
       ? projects
       : projects.filter((p) => p.tags.includes(active));
 
@@ -114,13 +114,13 @@ export default function WorkPage() {
                 </span>
               </MaskReveal>
               <div className="mt-4 mb-6">
-                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9]">
-                  <SplitText type="words" stagger={0.06}>Work</SplitText>
-                </h1>
+                  <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9]">
+                    <SplitText type="words" stagger={0.06}>Projets</SplitText>
+                  </h1>
               </div>
               <MaskReveal delay={0.3}>
                 <p className="text-[#6B635A] max-w-lg text-lg leading-relaxed">
-                  Selected projects across UX, UI, product and web design.
+                  Projets sélectionnés en UX, UI, design produit et web — chacun avec un problème réel, des contraintes précises et des décisions défendables.
                 </p>
               </MaskReveal>
 
@@ -154,33 +154,74 @@ export default function WorkPage() {
                   </button>
                 ))}
                 <span className="text-[10px] text-[#6B635A]/40 tracking-wider self-center ml-2">
-                  {filtered.length} project{filtered.length !== 1 ? "s" : ""}
+                  {filtered.length} projet{filtered.length !== 1 ? "s" : ""}
                 </span>
               </div>
             </MaskReveal>
 
             <LineReveal delay={0.2} className="mb-16" />
 
-            {/* Grid */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20 md:gap-y-28"
-              >
-                {filtered.map((project, i) => (
-                  <ProjectItem key={project.slug} project={project} index={i} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
+              {/* Grid */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20 md:gap-y-28"
+                >
+                  {filtered.map((project, i) => (
+                    <ProjectItem key={project.slug} project={project} index={i} />
+                  ))}
+                  {/* Carte "À venir" — visible uniquement sur le filtre All */}
+                    {active === "Tous" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: filtered.length * 0.05 }}
+                    >
+                      <div className="block project-card opacity-40 cursor-default select-none">
+                        <div className="relative overflow-hidden bg-[#111110] aspect-[4/3] border border-dashed border-[rgba(196,169,125,0.15)] flex flex-col items-center justify-center gap-4">
+                          {/* Subtle grid pattern */}
+                          <div className="absolute inset-0 grid-pattern opacity-10" />
+                          {/* Number */}
+                          <div className="absolute top-5 left-5">
+                            <span className="text-[10px] text-white/20 tracking-[0.3em] font-mono">
+                              {String(filtered.length + 1).padStart(2, "0")}
+                            </span>
+                          </div>
+                          {/* Plus icon */}
+                          <div className="w-10 h-10 border border-[#C4A97D]/20 flex items-center justify-center relative z-10">
+                            <span className="text-[#C4A97D]/40 text-xl leading-none">+</span>
+                          </div>
+                          <span className="text-[10px] text-[#6B635A] tracking-[0.35em] uppercase font-medium relative z-10">
+                            À venir
+                          </span>
+                        </div>
+                        <div className="mt-5">
+                          <div className="flex items-center gap-3 mb-2">
+                            <span className="text-[10px] text-[#C4A97D]/30 tracking-[0.25em] uppercase font-medium">
+                              Prochain projet
+                            </span>
+                          </div>
+                          <h3 className="font-serif text-2xl md:text-3xl text-foreground/20 mb-2">
+                            En cours de réalisation
+                          </h3>
+                          <p className="text-sm text-[#6B635A]/40 leading-relaxed max-w-sm">
+                            De nouveaux projets sont régulièrement ajoutés au portfolio.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              </AnimatePresence>
 
-            {/* Bottom wireframe decoration */}
-            <div className="mt-24 md:mt-36 max-w-[400px] mx-auto opacity-30">
-              <WireframeGrid />
-            </div>
+              {/* Bottom flow diagram */}
+              <div className="mt-24 md:mt-36">
+                <ProcessFlowDiagram />
+              </div>
           </div>
         </section>
       </div>
