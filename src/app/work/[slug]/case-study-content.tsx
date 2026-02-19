@@ -834,6 +834,8 @@ export function CaseStudyContent({
               href={`/work/${next.slug}`}
               className="group inline-flex flex-col items-center gap-8"
               data-cursor="Suivant"
+              scroll={false}
+              onClick={() => window.scrollTo({ top: 0 })}
             >
               <span className="font-serif text-5xl md:text-7xl lg:text-9xl text-foreground group-hover:text-[#C4A97D] transition-colors duration-700 leading-none">
                 <SplitText type="words" stagger={0.06}>
