@@ -24,6 +24,16 @@ export default function ContactPage() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const whatsappMessage = `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/22890776819?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
     setSubmitted(true);
   }
 
@@ -85,11 +95,11 @@ export default function ContactPage() {
                       </div>
                       <div className="w-16 h-[1px] bg-[#C4A97D]/40 mb-10" />
                       <h2 className="font-serif text-4xl text-foreground mb-5">
-                          Message reçu.
-                        </h2>
-                        <p className="text-[#6B635A] leading-relaxed max-w-md">
-                          Je vous répondrai dans les 48h avec une réponse construite — pas un accusé de réception automatique.
-                        </p>
+                        Message reçu.
+                      </h2>
+                      <p className="text-[#6B635A] leading-relaxed max-w-md">
+                        Je vous répondrai dans les 48h avec une réponse construite — pas un accusé de réception automatique.
+                      </p>
                     </div>
                   </Reveal>
                 ) : (
