@@ -82,7 +82,7 @@ function HeroSection() {
           <svg viewBox="0 0 120 120" className="w-full h-full">
             <path id="circle-text" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none" />
               <text className="fill-[#C4A97D]/30 text-[11px] tracking-[0.35em] uppercase">
-                <textPath href="#circle-text">DESIGNER UX/UI &#x2022; PORTFOLIO &#x2022; </textPath>
+                <textPath href="#circle-text">DESIGNER UX/UI SENIOR &#x2022; PORTFOLIO &#x2022; </textPath>
               </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -105,7 +105,7 @@ function HeroSection() {
                 </span>
                 <div className="w-12 h-[1px] bg-[#C4A97D]/40" />
                 <span className="text-[#6B635A] text-xs tracking-[0.2em] uppercase hidden sm:inline">
-                  Designer UX/UI
+                  Senior UX/UI Designer
                 </span>
             </div>
           </MaskReveal>
@@ -218,7 +218,7 @@ function StatsStrip() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
             <StatBlock number="6+" label="Projets livrés" accent />
             <StatBlock number="5+" label="Secteurs couverts" />
-            <StatBlock number="3" label="Ans d'expérience" accent />
+            <StatBlock number="4" label="Ans d'expérience" accent />
             <StatBlock number="100%" label="Centré utilisateur" />
         </div>
       </div>

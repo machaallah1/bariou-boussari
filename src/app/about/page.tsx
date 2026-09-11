@@ -26,55 +26,75 @@ import Image from "next/image";
 
 const skills = [
   {
-    category: "Design UX",
-    items: ["Recherche utilisateur", "Personas & parcours", "Architecture de l'information", "Wireframing & prototypage", "Tests d'utilisabilité"],
+    category: "Stratégie & recherche",
+    items: [
+      "Recherche utilisateur",
+      "Personas & parcours",
+      "Architecture info",
+      "Wireframing & prototypage",
+      "Tests d'utilisabilité",
+      "Cadrage & ateliers",
+    ],
   },
   {
-    category: "Design UI",
-    items: ["Design visuel", "Design systems", "Typographie & mise en page", "Design responsive", "Design d'interaction"],
+    category: "Conception & interface",
+    items: [
+      "Design visuel",
+      "Design systems",
+      "Direction de design",
+      "Typographie",
+      "Responsive design",
+      "Design d'interaction & micro-interactions",
+    ],
   },
   {
     category: "Outils",
-    items: ["Figma", "Adobe XD", "Sketch", "Miro", "Notion"],
+    items: ["Figma", "Adobe XD", "Sketch", "Miro", "Notion", "Adobe Illustrator"],
   },
   {
-    category: "État d'esprit",
-    items: ["Réflexion produit", "Collaboration", "Accessibilité", "Amélioration continue"],
+    category: "Soft Skills",
+    items: ["Vision produit", "Collaboration", "Accessibilité", "Amélioration continue"],
   },
 ];
 
 const experience = [
-    {
-      role: "UX Designer",
-      company: "ORTA Service",
-      period: "Juin — Juil 2022",
-      desc: "Première expérience en contexte professionnel. Conception d'interfaces utilisateur sur des produits internes, avec une attention portée à la lisibilité des flux et à la cohérence des composants.",
-    },
-    {
-      role: "UX/UI Designer",
-      company: "Upsilon Consulting",
-      period: "Juil 2022 — Janv 2023",
-      desc: "Conception et optimisation d'interfaces pour des projets clients variés. Structuration des parcours utilisateurs, production de maquettes haute-fidélité, et collaboration directe avec les équipes de développement.",
-    },
-    {
-      role: "UX/UI Designer",
-      company: "CADRECO",
-      period: "Juin — Sept 2023",
-      desc: "Réalisation des livrables UX/UI sur plusieurs projets numériques : wireframes, prototypes interactifs, parcours critiques. Travail en cycles courts avec validation régulière des hypothèses de design.",
-    },
-    {
-      role: "UX/UI Designer",
-      company: "SLI Afrika",
-      period: "Déc 2023 — Sept 2024",
-      desc: "Conception d'expériences digitales adaptées aux contraintes du marché africain : accessibilité, connectivité variable, diversité des profils utilisateurs. Focus sur la simplicité d'usage et la robustesse des parcours.",
-    },
-    {
-      role: "UX/UI Designer",
-      company: "Maono — Togo",
-      period: "Oct 2024 — Nov 2025",
-      desc: "Direction design sur des solutions digitales complexes au sein d'une agence d'innovation. Pilotage de la conception de bout en bout — de l'architecture UX à la livraison UI — en collaboration étroite avec les équipes produit et technique.",
-    },
-  ];
+  {
+    role: "UX/UI Designer",
+    company: "Maono Togo",
+    period: "Oct 2024 — Août 2026",
+    desc: "Direction du design d'interfaces pour des solutions digitales B2B/B2C, collaboration étroite avec les équipes produit et développement, conception de design systems et composants réutilisables. Accompagnement d'entreprises de premier plan : Togotech, ARCEP, SPBI, BIASA, Pur Alpha, Alea Park, AS-ONE, Lomé Data Center, SIN, Ecom, Majestic, RAMCO.",
+  },
+  {
+    role: "UX/UI Designer — freelance",
+    company: "Konecty (France) · projet On se dit oui",
+    period: "Oct 2025 — Avr 2026",
+    desc: "Design et suivi du site en ligne du projet en collaboration à distance. Conception complète de l'interface de la plateforme de gestion événementielle.",
+  },
+  {
+    role: "UX/UI Designer",
+    company: "SLI Afrika",
+    period: "Déc 2023 — Sept 2024",
+    desc: "Conception d'expériences digitales adaptées aux contraintes du marché africain : accessibilité, simplicité d'utilisation, recherche utilisateur et tests d'utilisabilité.",
+  },
+  {
+    role: "UX/UI Designer",
+    company: "CADRECO",
+    period: "Juin — Sept 2023",
+    desc: "Réalisation de maquettes et prototypes haute fidélité, conception de parcours utilisateurs optimisés et amélioration des produits numériques existants.",
+  },
+  {
+    role: "UX/UI Designer",
+    company: "Upsilon Consulting",
+    period: "Juil 2022 — Janv 2023",
+    desc: "Conception et optimisation d'interfaces pour des projets clients variés avec application d'une méthodologie centrée utilisateur.",
+  },
+  {
+    role: "UX Designer",
+    company: "ORTA Service",
+    period: "Juin — Juil 2022",
+    desc: "Contribution à la conception d'interfaces utilisateur et amélioration de l'expérience utilisateur des produits digitaux.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -140,34 +160,28 @@ export default function AboutPage() {
               <div>
                   <MaskReveal delay={0.2}>
                     <p className="text-xl md:text-2xl text-foreground leading-[1.5] mb-10 font-serif">
-                      Je suis Bariou Boussari, Designer UX/UI Product basé à Lomé.
-                      Je conçois des expériences digitales qui résolvent de vrais problèmes.
+                      Je suis Bariou Boussari, Senior UX/UI Designer basé à Lomé.
+                      Avec 4 ans d&apos;expérience sur des produits digitaux B2B et B2C, je prends en charge le design de bout en bout.
                     </p>
                   </MaskReveal>
 
                   <MaskReveal delay={0.3}>
                     <p className="text-[#6B635A] leading-[1.9] mb-6">
-                        Mon approche part toujours du problème — pas de la forme. Avant de
-                        concevoir, je cartographie les parcours, identifie les frictions,
-                        aligne les intentions. L&apos;interface est la conclusion d&apos;un
-                        raisonnement, pas son point de départ.
+                      Mon rôle est de transformer des besoins métier complexes en interfaces que les équipes peuvent livrer : cadrage et arbitrages, recherche utilisateur, architecture de l&apos;information, maquettes haute fidélité et design systems pérennes.
                     </p>
                   </MaskReveal>
 
                   <MaskReveal delay={0.4}>
                     <p className="text-[#6B635A] leading-[1.9] mb-10">
-                      Que ce soit un tableau de bord médical, une plateforme de gestion
-                      d&apos;événements ou un écosystème d&apos;agence, j&apos;apporte la même
-                      rigueur : une architecture solide, une hiérarchie maîtrisée et
-                      un soin constant pour la cohérence entre discours et perception.
+                      Je travaille en lien direct avec les équipes produit et développement, jusqu&apos;à la mise en production. Des solutions B2B aux plateformes B2C, j&apos;apporte la même exigence : parcours clarifiés, composants réutilisables et cohérence visuelle durable.
                     </p>
                   </MaskReveal>
 
                 <MaskReveal delay={0.5}>
                   <div className="flex items-center gap-6 pt-6 border-t border-[rgba(196,169,125,0.05)]">
-                    <StatBlock number="6+" label="Projets" accent />
+                    <StatBlock number="4" label="Ans d'exp." accent />
                     <div className="w-[1px] h-10 bg-[rgba(196,169,125,0.08)]" />
-                    <StatBlock number="5+" label="Secteurs" />
+                    <StatBlock number="6+" label="Projets" />
                     <div className="w-[1px] h-10 bg-[rgba(196,169,125,0.08)]" />
                     <StatBlock number="Lomé" label="Basé" />
                   </div>

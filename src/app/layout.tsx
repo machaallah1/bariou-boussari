@@ -19,9 +19,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Bariou Boussari — Designer UX/UI",
+  title: "Bariou Boussari — Senior UX/UI Designer",
   description:
-    "Designer UX/UI Product basé à Lomé. Conception d'expériences digitales structurées, centrées utilisateur. Portfolio de projets, méthodologie et réflexion produit.",
+    "Senior UX/UI Designer basé à Lomé, 4 ans d'expérience sur des produits digitaux B2B et B2C. Cadrage, recherche utilisateur, architecture de l'information et design systems.",
 };
 
 export default function RootLayout({

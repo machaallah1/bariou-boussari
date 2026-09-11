@@ -479,7 +479,7 @@ export const projects: Project[] = [
       sector: "Digital · IA · Innovation",
       tags: ["UX", "UI", "Web"],
       year: "2025–2026",
-    role: "UX/UI Designer",
+    role: "Lead UX/UI Designer",
     scope: "UX · UI · Structure de contenu · Direction visuelle · Storytelling",
       description:
         "Maono est une agence digitale, créative et IA positionnée comme acteur de la transformation numérique en Afrique. Le défi était de concevoir une expérience digitale capable de rendre lisible un écosystème complexe — Studio, Systems, Labs, Strategy — sans en diluer l'ambition.",

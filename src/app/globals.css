@@ -259,72 +259,118 @@ nextjs-portal { display: none !important; }
   outline-offset: 2px;
 }
 
-/* ── CV Page styles ── */
-.cv-section-title {
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #C4A97D;
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(196, 169, 125, 0.08);
+/* ── CV Page styles (Faithful 2-page editorial design) ── */
+.cv-sheet {
+  width: 100%;
+  max-width: 820px;
+  background-color: #ECEAE4;
+  color: #1F1F1E;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(196, 169, 125, 0.15);
+  position: relative;
+  overflow: hidden;
 }
 
-.cv-tag {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 11px;
-  color: #8A817A;
-  border: 1px solid rgba(196, 169, 125, 0.08);
-  background: rgba(196, 169, 125, 0.02);
-  transition: all 0.3s ease;
+.cv-label-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7A756D;
+  font-weight: 600;
+  margin-bottom: 0.875rem;
 }
-.cv-tag:hover {
-  border-color: rgba(196, 169, 125, 0.2);
-  color: #C4A97D;
+
+.cv-label-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.cv-tag-light {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.725rem;
+  line-height: 1.2;
+  color: #383531;
+  background-color: #DDD9CF;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cv-tag-light:hover {
+  background-color: #D3CEC2;
+  color: #111;
+}
+
+.cv-tag-dark {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.725rem;
+  line-height: 1.2;
+  color: #FFFFFF;
+  background-color: #1A1A19;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cv-tag-dark:hover {
+  background-color: #2E2E2C;
 }
 
 /* ── Print styles for CV ── */
 @media print {
   body {
-    background: #fff !important;
-    color: #1a1a1a !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    background: transparent !important;
+    color: #1F1F1E !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
+
   body::before {
     display: none !important;
   }
-  header, footer, .print-hidden {
+
+  header, footer, .print-hidden, #orchids-browser-logs, .custom-cursor {
     display: none !important;
   }
 
-  .cv-page {
-    max-width: 100% !important;
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .cv-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .cv-sheet {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-width: none !important;
     margin: 0 !important;
     border: none !important;
     box-shadow: none !important;
-    background: #fff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  .cv-page * {
-    color: #1a1a1a !important;
-  }
-
-  .cv-section-title {
-    color: #333 !important;
-    border-bottom-color: #ddd !important;
-  }
-
-  .cv-tag {
-    border-color: #ddd !important;
-    color: #444 !important;
-    background: #f5f5f5 !important;
+  .cv-sheet:last-of-type {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
   }
 
   @page {
-    size: A4;
-    margin: 10mm;
+    size: A4 portrait;
+    margin: 0;
   }
 }
